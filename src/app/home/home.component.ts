@@ -25,7 +25,7 @@ export class HomeComponent {
       complete:()=>console.log('Request Has Been Completed')
     });
   }
-  CancleRegistration(event:boolean){
+  cancleRegistration(event:boolean){
     this.registerMode=event;
   }
 

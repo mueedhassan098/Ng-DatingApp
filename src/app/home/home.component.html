@@ -1,7 +1,7 @@
 <div class="contanier mg-5">
     <div *ngIf="!registerMode" style="text-align: center;">
         <h1>Find Your Match</h1>
-        <p class="lead">Come on in to view your matchs.. all you do to sign up</p>
+        <p class="lead">Come on in to view your matches... all you need to do is sign up!</p>
         <div class="text-center">
             <button (click)="RgisterToggle()" class="btn btn-primary btn-medium me-2">Register</button>
             <button class="btn btn-primary btn-medium ">Learn More</button>
@@ -11,12 +11,9 @@
     <div *ngIf="registerMode" class="contanier">
         <div class="row justify-content-center">
             <div class="col-4"> 
-                <app-register  (CancleRegister)="CancleRegistration($event)"></app-register> 
+                <app-register  (cancleRegister)="cancleRegistration($event)"></app-register> 
             <!-- <app-register [userFromHomeComponent]="user" (CancleRegister)="CancleRegistration($event)"></app-register> -->
             </div>
         </div>
     </div>
-</div>
-<div>
-    Mudasir king
 </div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AccountService } from '../_services/account.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -7,10 +8,10 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  @Output() CancleRegister =new EventEmitter();
+  @Output() cancleRegister =new EventEmitter();
   model:any={}
 
-  constructor(private accountservice:AccountService){}
+  constructor(private accountservice:AccountService,private toastr:ToastrService){}
 
   ngOnInit():void{}
 
@@ -19,13 +20,13 @@ export class RegisterComponent {
       next:()=>{
         this.cancle();
       },
-      error:error=>console.log(error)
+      error:error=>this.toastr.error(error.error)
       
     })
    // console.log(this.model);
   }
   cancle(){
-   this.CancleRegister.emit(false);
+   this.cancleRegister.emit(false);
     //console.log("Cancled");
   }
 

@@ -25,9 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootswatch/dist/solar/bootstrap.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -49,6 +51,7 @@
               "outputHashing": "all"
             },
             "development": {
+             
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -72,6 +75,7 @@
             },
             "development": {
               "browserTarget": "DatingApp:build:development"
+              
             }
           },
           "defaultConfiguration": "development"
