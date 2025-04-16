@@ -27,7 +27,7 @@
             "styles": [
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootswatch/dist/solar/bootstrap.css",
+              "node_modules/bootswatch/dist/united/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
@@ -36,6 +36,12 @@
           },
           "configurations": {
             "production": {
+             "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -110,4 +116,5 @@
   "cli": {
     "analytics": "aae309ee-dae3-425b-8f8c-f04a072855cf"
   }
+
 }

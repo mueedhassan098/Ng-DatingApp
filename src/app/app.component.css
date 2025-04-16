@@ -1,0 +1,35 @@
+.container {
+    margin-top: 100px;
+    padding: 2rem;
+  }
+  
+  /* Optional: Basic styling for <app-nav> if needed */
+  app-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* For router-outlet's wrapper to be responsive and centered */
+  router-outlet + * {
+    display: block;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  /* Optional: smooth scroll or transition styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Basic body styling */
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }

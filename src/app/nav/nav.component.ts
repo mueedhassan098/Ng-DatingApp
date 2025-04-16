@@ -9,13 +9,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+ 
   model:any={}
 
   constructor(public accountservices:AccountService,private router: Router,private toastr:ToastrService ){}
 
-ngOnInit():void{
+  ngOnInit():void{
 
-}
+  }
 
  login(){
   this.accountservices.login(this.model).subscribe({
@@ -26,9 +27,11 @@ ngOnInit():void{
  });
     //console.log(this.model);
 }
-logout(){
-  this.accountservices.logout();
-  this.router.navigateByUrl('/');
-   //this.loggedIn=false; //pura tarika manul wala
-}
+  logout(){
+    this.accountservices.logout();
+    this.router.navigateByUrl('/');
+     //this.loggedIn=false; //pura tarika manul wala
+  }
+
+
 }
