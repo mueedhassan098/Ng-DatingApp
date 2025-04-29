@@ -13,23 +13,25 @@ export class AccountService {
   currentUser$=this.currentusersource.asObservable();
 
   constructor(private http:HttpClient) { }
+
+
   login(model:any){
     return this.http.post<User>(this.BaseUrl+'account/login',model).pipe(
       map((response: User )=>{    
       const user= response;
       if(user){
-        localStorage.setItem('user',JSON.stringify(user))
-       this.currentusersource.next(user);      
+        this.setCurrentUser(user);  
        }
       }) 
     )
   }
+
+
   register(model:any){
     return this.http.post<User>(this.BaseUrl+'account/register',model).pipe(
       map(user=>{
         if(user){
-          localStorage.setItem('user',JSON.stringify(user));
-          this.currentusersource.next(user);
+         this.setCurrentUser(user);
         }
       })
     )
@@ -37,6 +39,7 @@ export class AccountService {
 
 
   setCurrentUser(user:User){
+    localStorage.setItem('user',JSON.stringify(user));
     this.currentusersource.next(user);
   }
 
