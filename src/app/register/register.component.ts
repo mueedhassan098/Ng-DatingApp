@@ -47,7 +47,7 @@ export class RegisterComponent {
 
   register(){
     const dob=this.getDateOnly(this.registerForm.controls['dateOfBirth'].value);
-    const values={...this.registerForm.value, dateOfBirth:dob}; 
+    const values={...this.registerForm.value, dateOfBirth:dob};  
     this.accountservice.register(values).subscribe({
       next:()=>{
         this.router.navigateByUrl('/members')
@@ -56,7 +56,7 @@ export class RegisterComponent {
        this.validationErrors=error
       }
     })
-    //console.log(this.registerForm.value);
+    console.log(this.registerForm.value);
   }
   cancle(){
    this.cancleRegister.emit(false);
