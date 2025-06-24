@@ -103,7 +103,8 @@ button.btn-info:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: start;
+  /* justify-content: start; */
+  justify-content: flex-start;
   margin: 0 auto;
   padding: 20px;
 }

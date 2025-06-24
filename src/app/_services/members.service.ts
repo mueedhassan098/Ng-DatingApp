@@ -29,6 +29,16 @@ export class MembersService {
     }
   })
   }
+  addlikes(username:string){
+    return this.http.post(this.baseUrl + 'likes/' + username, {});
+  }
+
+  getLikes(predicate:string, pageSize:number, pageNumber:number){
+    let params=this.getPaginationHeaders(pageNumber,pageSize);
+    params=params.append('predicate', predicate);
+    return this.getPaginatedResult<Member[]>(this.baseUrl + 'likes', params);
+  }
+
   getUserParams(){
     return this.userParams;
   }
