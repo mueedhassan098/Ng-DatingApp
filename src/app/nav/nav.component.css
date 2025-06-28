@@ -1,100 +1,106 @@
-/* .dropdown-toggle, .dropdown-item{
-    cursor: pointer;
-} */
- /* General navbar styling */
+/* Navbar Styling */
 .navbar {
-    background-color:  #e92121 !important;
-    padding: 0.8rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #fff !important;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #ddd !important;
-    transition: color 0.3s;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #fff !important;
-    text-decoration: underline;
-  }
-  
-  .dropdown-toggle {
-    cursor: pointer;
-  }
-  
-  .dropdown-menu {
-    background-color: #212529;
-    border: none;
-    margin-top: 0.5rem;
-    min-width: 150px;
-    padding: 0.5rem 0;
-    border-radius: 0.3rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  .dropdown-item {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-    background-color: #7b817c;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #343a40;
-    color: #fff;
-  }
-  
-  /* Login form inline in navbar */
-  form.d-flex {
-    gap: 0.5rem;
-    align-items: center;
-  }
-  
-  form.d-flex input.form-control {
-    background-color: #343a40;
-    border: 1px solid #555;
-    color: #fff;
-  }
-  
-  form.d-flex input.form-control::placeholder {
-    color: #bbb;
-  }
-  
-  form.d-flex .btn {
-    color: #28a745;
-    border-color: #28a745;
-  }
-  
-  form.d-flex .btn:hover {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  /* Responsive fix for navbar form */
-  @media (max-width: 768px) {
-    form.d-flex {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-  
-    .navbar-nav {
-      margin-top: 1rem;
-    }
-  }
-  img{
-    max-height: 50px;
-    border: 2px solid white;
-    display: inline;
+  background-color: #007bff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #dfefff !important;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-size: 15px;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Dropdown Profile Image */
+.dropdown img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f0f0f0;
+}
+
+/* Dropdown Link Styling */
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu {
+  padding: 10px;
+  min-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 8px;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+/* Login Form (Right Side) */
+form.d-flex input.form-control {
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+}
+
+form.d-flex button {
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 6px 16px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+form.d-flex button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Collapse (Optional) */
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: 8px;
   }
 
-  
+  .form-control.me-2 {
+    margin-bottom: 10px;
+  }
+
+  form.d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
