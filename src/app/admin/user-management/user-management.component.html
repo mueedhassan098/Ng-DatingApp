@@ -1,0 +1,40 @@
+<!-- <div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width: 30%;">Username</th>
+                <th style="width: 40%;">Active Roles</th>
+                <th style="width: 30%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                  <td>{{ user.userName}}</td>
+                <td>{{user.roles}}</td>
+                <td><button class="btn btn-info">Edit Roles</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="row" style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+  <div class="card col-4" *ngFor="let user of users" style="flex: 1 1 calc(33.333% - 1rem); max-width: 400px;">
+    <div class="card-body">
+      <div>
+        <strong>Username:</strong>
+        <p>{{ user.userName }}</p>
+      </div>
+      <div>
+        <strong>Active Roles:</strong>
+        <!-- <p>{{ user.roles?.join(', ') }}</p> -->
+         <p>{{user.roles.join(', ')}}</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="btn-group">
+        <button (click)="openRolesModal(user)" class="btn btn-primary">Edit Roles</button>
+      </div>
+    </div>
+  </div>
+</div>
