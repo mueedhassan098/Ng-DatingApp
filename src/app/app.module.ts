@@ -30,6 +30,7 @@ import { HasRoleDirective } from './_directives/has-role.directive';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+
  
 
 @NgModule({
@@ -59,14 +60,15 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     SharedModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    
+],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true},
