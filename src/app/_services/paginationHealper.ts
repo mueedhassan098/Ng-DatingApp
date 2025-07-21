@@ -11,7 +11,7 @@ import { PaginatedResult } from '../_models/Pagination';
         if (response.body) {
           paginatedResult.result = response.body;
         }
-        const pagination = response.headers.get('pagination');
+        const pagination = response.headers.get('Pagination');
         if (pagination) {
           paginatedResult.pagination = JSON.parse(pagination);
         }

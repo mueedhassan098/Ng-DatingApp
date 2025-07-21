@@ -47,7 +47,7 @@ export class MessageService {
                 message.dateRead = new Date(Date.now())
               }
             })
-            this.messageThreadSource.next([...messages]);
+            this.messageThreadSource.next([...messages]); 
           }
         })
       }

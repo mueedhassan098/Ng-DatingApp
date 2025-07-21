@@ -30,14 +30,17 @@
               "node_modules/bootswatch/dist/united/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/ngx-toastr/toastr.css",
-               "node_modules/ngx-spinner/animations/line-scale-party.css",
+              "node_modules/ngx-spinner/animations/line-scale-party.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+            ]
           },
           "configurations": {
             "production": {
-             "fileReplacements": [
+              "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
@@ -58,7 +61,6 @@
               "outputHashing": "all"
             },
             "development": {
-             
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -82,7 +84,6 @@
             },
             "development": {
               "browserTarget": "DatingApp:build:development"
-              
             }
           },
           "defaultConfiguration": "development"
@@ -117,5 +118,4 @@
   "cli": {
     "analytics": "aae309ee-dae3-425b-8f8c-f04a072855cf"
   }
-
 }

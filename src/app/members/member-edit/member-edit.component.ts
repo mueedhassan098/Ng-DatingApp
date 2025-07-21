@@ -25,7 +25,8 @@ export class MemberEditComponent {
   constructor(private accountService:AccountService,private memberService:MembersService,private toastar:ToastrService){
 
     this.accountService.currentUser$.pipe(take(1)).subscribe({
-      next:user=>this.user=user
+      next:user=>{this.user=user        
+      }    
     })
   }
 
@@ -37,7 +38,10 @@ export class MemberEditComponent {
   loadMember(){
     if(!this.user) return;
     this.memberService.getMember(this.user.userName).subscribe({
-      next:member=>this.member=member
+      next:member=>{
+        console.log('member loaded:', member); // Debugging line
+        this.member=member
+      }
     })
   }
 

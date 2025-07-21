@@ -20,18 +20,15 @@ export class NavComponent {
 
  login(){
   this.accountservices.login(this.model).subscribe({
-   next:()=>this.router.navigateByUrl('/members'),
-   // error:error=>this.toastr.error(error.error)      
-     // this.loggedIn=true;  //purana sub and unsub   
-     
+   next:()=>{
+    this.router.navigateByUrl('/members');
+    this.model={}; //reset the model after login
+  }      
  });
-    //console.log(this.model);
 }
   logout(){
     this.accountservices.logout();
     this.router.navigateByUrl('/');
      //this.loggedIn=false; //pura tarika manul wala
   }
-
-
 }
