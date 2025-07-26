@@ -1,6 +1,6 @@
-<div class="row mb-3" *ngIf="member">
+<!-- <div class="row mb-3" *ngIf="member">
     <div class="col-2 mb-1" *ngFor="let photo of member.photos">
-        <img src="{{photo.url}}" alt="photo of user" class="img-thumbnail mb-1">
+        <img  src="{{photo.url}}" alt="photo of user" class="img-thumbnail mb-1">
         <div class="text-center">
             <button
              class="btn btn-sm"
@@ -81,14 +81,81 @@
                     (click)="uploader?.clearQueue()" [disabled]="!uploader?.queue?.length">
                 <span class="fa fa-trash"></span> Remove all
             </button>
+        </div> -->
+   
+<!-- <div class="row mb-3" *ngIf="member">
+  <div class="col-2 mb-1" *ngFor="let photo of member.photos">
+    
+    
+    <ng-container *ngIf="photo.isApproved; else awaiting">
+      <img src="{{photo.url}}" alt="photo of user" class="img-thumbnail mb-1">
+
+      <div class="text-center">
+        <button
+          class="btn btn-sm"
+          [disabled]="photo.isMain"
+          (click)="setMainPhoto(photo)"
+          [ngClass]="photo.isMain ? 'btn-success active' : 'btn-outline-success'"
+        >
+          Main
+        </button>
+        <button
+          class="btn btn-sm btn-danger"
+          [disabled]="photo.isMain"
+          (click)="deletePhoto(photo.id)"
+        >
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </ng-container>
+
+    
+    <ng-template #awaiting>
+      <div class="text-center">
+        <img src="{{photo.url}}" alt="photo of user" class="img-thumbnail mb-1 opacity-50">
+        <div class="text-danger mt-1">
+          Awaiting Approval
         </div>
+      </div>
+    </ng-template>
+
+  </div>
+</div> -->
+<div class="row mb-3" *ngIf="member">
+  <div class="col-2 mb-1 position-relative" *ngFor="let photo of member.photos">
+    <img
+      src="{{photo.url}}"
+      alt="{{photo.url}}"
+      class="img-thumbnail mb-1"
+      [style.opacity]="photo.isApproved ? 1 : 0.2"
+    />
+
+    <!-- Absolute text -->
+    <div
+      *ngIf="!photo.isApproved"
+      class="position-absolute w-100 text-center"
+      style="top: 40%; left: 0;"
+    >
+      <span class="text-danger fw-bold">Awaiting Approval</span>
     </div>
-     <div class="row">
-     <div class="col-2 mb-1 img-wrapper" *ngFor="let photo of member?.photos">
-     <img src="{{photo.url}}" alt="{{photo.url}}" class="img-thumbnail p-1"
-     [class.not-approved]="!photo.isApproved"
-     >
-     <div class="text-center img-text" *ngIf="!photo.isApproved">
-     <span class="text-danger">Awaiting approval</span>
-     </div>
+
+    <div class="text-center mt-1">
+      <button
+        class="btn btn-sm"
+        [disabled]="photo.isMain || !photo.isApproved"
+        (click)="setMainPhoto(photo)"
+        [ngClass]="photo.isMain ? 'btn-success active' : 'btn-outline-success'"
+      >
+        Main
+      </button>
+
+      <button
+        class="btn btn-sm btn-danger"
+        [disabled]="photo.isMain"
+        (click)="deletePhoto(photo.id)"
+      >
+        <i class="fa fa-trash"></i>
+      </button>
     </div>
+  </div>
+</div>

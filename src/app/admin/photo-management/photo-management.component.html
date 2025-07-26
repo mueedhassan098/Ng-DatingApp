@@ -1,4 +1,4 @@
- <div class='row'>
+ <!-- <div class='row'>
  <div class='col-sm-2' *ngFor='let photo of photos'>
  <h4>{{photo.username}}</h4>
  <img src='{{photo.url}}' class='img-thumbnail p-1' 
@@ -11,4 +11,32 @@ danger' (click)='rejectPhoto(photo.id)'>Reject</button>
  </div>
  </div>
  </div>
+ -->
+<div class='row'>
+  <div class='col-sm-2' *ngFor='let photo of photos'>
+    <h4>{{photo.username}}</h4>
 
+    <img  src='{{photo.url}}' class='img-thumbnail p-1' alt='{{photo.username}}'>
+
+    <!-- badge -->
+    <div class="text-center mt-1">
+      <span *ngIf="photo.isApproved; else pending" class="badge bg-success">
+        Approved
+      </span>
+      <ng-template #pending>
+        <span class="badge bg-warning text-dark">
+          Under Approval
+        </span>
+      </ng-template>
+    </div>
+
+    <!-- approve/reject buttons -->
+    <div class='text-center mt-2'>
+      <button class='btn btn-sm btn-success me-1'
+        (click)='approvePhoto(photo.id)'>Approve</button>
+
+      <button class='btn btn-sm btn-danger'
+        (click)='rejectPhoto(photo.id)'>Reject</button>
+    </div>
+  </div>
+</div>
